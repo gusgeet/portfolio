@@ -1,7 +1,7 @@
 export const LINKS = [
     {
         id: 1,
-        link: "Mi historia"
+        link: "Historia y progreso"
     },
     {
         id: 2,
