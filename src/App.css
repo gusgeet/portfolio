@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
-  background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgba(83,138,214,1) 0%, rgba(134,231,214,1) 90% );
+  background-image: radial-gradient( circle farthest-corner at 92.3% 71.5%,  rgb(184, 128, 17) 0%, rgba(255,255,255,1) 90% );
   background-attachment: fixed;
+  font-family: 'Fredoka', sans-serif;
 }

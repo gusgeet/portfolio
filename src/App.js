@@ -1,11 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/header/header';
+import About from './components/about/About';
+import Contact from './components/contact/Contact';
+import Intro from './components/intro/Intro';
+import Techs from './components/techs/Techs';
+
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Intro/>
+      <About/>
+      <Techs/>
+      <Contact />
     </div>
   );
 }
