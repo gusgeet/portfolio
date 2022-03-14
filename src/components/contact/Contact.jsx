@@ -1,24 +1,13 @@
 import './Contact.css';
 import react, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
-
+import { DotenvConfigOptions } from 'dotenv';
 
 const Contact = () => {
     const formRef = useRef();
     const [done, setDone] = useState(false);
-    const [cursor, setCursor] = useState('crosshair')
-
-    const changeCursor = () => {
-        setCursor(prevState => {
-            if(prevState === 'crosshair'){
-                return 'pointer';
-            }
-            return 'crosshair';
-        });
-    }
         
     const handleSubmit = (e) => {
-        changeCursor(!setCursor);
         e.preventDefault();
         emailjs.sendForm
         (process.env.REACT_APP_SERVICE_ID, 
@@ -28,10 +17,8 @@ const Contact = () => {
         .then((result) => {
             console.log(formRef.current)
             setDone(true)
-            changeCursor(!setCursor);
         }, (error) => {
             console.log(error.text);            
-            changeCursor(!setCursor);
         });
 
 
