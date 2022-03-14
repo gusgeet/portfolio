@@ -24,7 +24,7 @@ const Intro = () => {
                         crecimientos de las nuevas tecnologías.
                         </p>
                 </div>
-                <img src={mouse} className="i-scroll" alt="" />
+               
             </div>
         <div className="i-right">
             <div className="i-bg">
