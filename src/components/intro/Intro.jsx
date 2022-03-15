@@ -1,6 +1,5 @@
 import './Intro.css';
 import img from  '../../img/image.png';
-import mouse from '../../img/mouse.svg';
 
 const Intro = () => {
   return (
