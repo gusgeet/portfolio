@@ -13,7 +13,7 @@ function App() {
   
 
   return (
-    <div style={{background:darkMode ? "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(34,23,221,1) 100%, rgba(0,0,255,1) 100%)" : "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(23,221,196,1) 100%, rgba(0,0,255,1) 100%)", color: darkMode && "white"}} className="App">
+    <div style={{background:darkMode ? "linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(1,1,13,1) 3%, rgba(86,85,87,1) 100%, rgba(86,85,87,1) 100%)" : "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(23,221,196,1) 100%, rgba(0,0,255,1) 100%)", color: darkMode && "white"}} className="App">
       <Toggle />
       <Intro/>
       <About/>

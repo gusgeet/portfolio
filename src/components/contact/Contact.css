@@ -1,5 +1,5 @@
 .contact-container {
-    height: 70vh;
+    height: 130vh;
 }
 
 .contact-title {
@@ -51,6 +51,7 @@ textarea{
     font-size: 14px;
     padding-left: 10px;
     background-color: transparent;
+    resize: none;
 }
 
 
@@ -64,9 +65,22 @@ button{
 }
 
 input:focus{
-    background-color: white;
+    background-color: transparent;
+    transition: 0.3s ease-in;
+}
+
+input:focus + .contact-container{
+    height: 120vh;
 }
 
 textarea:focus{
-    background-color: white;
+    background-color: transparent;
+    transition: 0.3s ease-in;
+}
+
+@media (max-width:650px) {
+    .contact-container-info{
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -74,7 +74,7 @@
     }
 }
 
-@media (min-width: 300px) and (max-width: 1200px){
+@media (max-width: 1200px){
     .a-left {
         display: none;
     }
@@ -91,6 +91,6 @@
     .about {
         display: flex;
         padding: 50px;
-        height: 60%;
+        height: 100%;
     }
 }
