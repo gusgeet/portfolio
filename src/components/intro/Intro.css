@@ -1,19 +1,23 @@
 .i{
     display: flex;
     height: 100vh;
-    
+    justify-content: space-around;
 }
 
 .i-left {
-    flex: 2;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .i-right {
-    flex: 2;
+    flex: 1;
     position: relative;
+    justify-content: space-around;
+}
+
+.i-bg {
     
 }
 
@@ -85,8 +89,8 @@
 .i-bg {
     clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
     background-color: lightcoral;
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
     position: absolute;
     top: 50px;
     right: 5%;
@@ -102,12 +106,36 @@
 
 
 
-@media (max-width: 1320px) {
-    .i-right {
-        display: none;
+@media (max-width: 1300px) {
+    .i{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 40%;
+    }
+    .i-left {
+        display: block;
+    }
+
+    .i-title-item {
+        font-size: 20px;
+        justify-content: center;
     }
 
     .i-bg {
-        display: none;
+        width: 350px;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
     }
+
+    .i-right {
+        display: none;
+        height: 50%;
+        width: 50%;
+        margin-bottom: 10%;
+    }
+
 }

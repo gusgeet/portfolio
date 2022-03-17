@@ -1,0 +1,159 @@
+@import "../../global.scss";
+
+
+.works {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 200px;
+
+  .arrow {
+    height: 20px;
+    padding: -120px;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 10px;
+    
+
+    @include mobile {
+      height: 15px;
+    }
+
+    &.left {
+      left: 45px;
+      transform: rotateY(180deg);
+
+      @include mobile2 {
+        left: 40px;
+      }
+    }
+
+    &.left:nth-child(2){
+      left: 40px;
+      
+    }
+
+    &.right {
+      right: 40px;
+    }
+  }
+
+  .slider {
+    height: 300px;
+    display: flex;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+
+    @include mobile {
+      height: 10vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      justify-content: center;
+    }
+
+    .containerSlider {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 100vw;
+      }
+
+      .item {
+        width: 700px;
+        height: 100%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile {
+          width: 80%;
+          height: 75px;
+          margin: 15px 0;
+        }
+
+        .left {
+          flex: 4;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @include mobile {
+            height: 100%;
+            flex: 1;
+          }
+
+
+          .leftContainer {
+            width: 90%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            justify-content: space-around;
+
+            
+
+            h2 {
+              font-size: 30px;
+              
+
+              @include mobile{
+                display: none;
+                width: 0px;
+              }
+            }
+            p {
+              font-size: 13px;
+              @include mobile{
+                display: none;
+              }
+            }
+            span {
+              font-size: 12px;
+              font-weight: 600;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+        .right {
+          flex: 8;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+
+          @include mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            height: auto;
+            justify-content: center;
+            flex: 2;
+          }
+
+          @include mobile2{
+            flex: 3;
+          }
+
+          img {
+            width: 400px;
+
+            @include mobile {
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,6 +10,8 @@ const Contact = () => {
     const theme = useContext(ThemeContext)
         
     const handleSubmit = (e) => {
+
+
         e.preventDefault();
         emailjs.sendForm
         (process.env.REACT_APP_SERVICE_ID, 
@@ -18,7 +20,6 @@ const Contact = () => {
         process.env.REACT_APP_USER_ID)
         .then((result) => {
             setDone(true)
-            
         }, (error) => {
             alert(error.text);            
         });
@@ -37,7 +38,7 @@ const Contact = () => {
                 <p className="contact-text">Gracias por su interés.</p>
             </div>
             <div className="contact-right">
-                <b>Formulario de Contacto</b>
+                <b className='contact-form-title'>Formulario de Contacto</b>
                 <form ref={formRef} onSubmit={handleSubmit}> 
                     <input type="text" style={{color: theme.state.darkMode ? "white" : "black"}} placeholder='Escriba su nombre' name='from_name'/>
                     <input type="email" style={{color: theme.state.darkMode ? "white" : "black"}} placeholder='Email'  name='email'/>
