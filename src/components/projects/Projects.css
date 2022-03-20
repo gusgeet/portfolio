@@ -1,0 +1,15 @@
+.projects-container{
+    display: flex;
+    width: 60%;
+    height: 60%;
+
+}
+
+.carousel-div {
+    width: 100%;
+    
+}
+
+.projects {
+    text-align: center;
+}

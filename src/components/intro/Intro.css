@@ -1,32 +1,28 @@
 .i{
     display: flex;
     height: 100vh;
-    justify-content: space-around;
+    
 }
 
 .i-left {
-    flex: 1;
+    flex: 2;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .i-right {
-    flex: 1;
+    flex: 2;
     position: relative;
-    justify-content: space-around;
-}
-
-.i-bg {
     
 }
 
 .i-left-wrapper {
-    padding: 50px;
-    height: 60%;
+    margin-left: 25px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .i-intro {
@@ -45,25 +41,21 @@
 
 .i-title-wrapper {
     height: 100%;
-    animation: move 10s ease-in-out infinite;
-    animation-iteration-count: infinite;
+    animation: move 10s ease-in-out infinite alternate;
 }
 
 @keyframes move {
-    20%{
+    25%{
         transform: translateY(-50px);
     }
-    40%{
+    50%{
         transform: translateY(-100px);
     }
-    60%{
+    75%{
         transform: translateY(-150px);
     }
-    80%{
-        transform: translateY(-200px);
-    }
     100%{
-        transform: translateY(-250px);
+        transform: translateY(-200px);
     }
     
 }
@@ -87,10 +79,8 @@
 }
 
 .i-bg {
-    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-    background-color: lightcoral;
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: 80%;
     position: absolute;
     top: 50px;
     right: 5%;
@@ -106,36 +96,32 @@
 
 
 
-@media (max-width: 1300px) {
-    .i{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: 40%;
-    }
+@media (max-width: 1320px) {
     .i-left {
-        display: block;
+        display: flex;
+        flex: 2;
     }
 
-    .i-title-item {
-        font-size: 20px;
-        justify-content: center;
+    .i-right{
+        display: flex;
+        flex: 3;
     }
 
-    .i-bg {
-        width: 350px;
-        height: 400px;
-        justify-content: center;
-        align-items: center;
+    .i-title-item{
+        font-size: 24px;
     }
+}
 
-    .i-right {
+@media (max-width: 950px){
+    .i-right{
         display: none;
-        height: 50%;
-        width: 50%;
-        margin-bottom: 10%;
     }
 
+    .i{
+        height: 90vh;
+    }
+
+    .i-title-item{
+        justify-content: center;
+    }
 }

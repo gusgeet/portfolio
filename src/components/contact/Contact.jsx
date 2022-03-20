@@ -1,17 +1,13 @@
 import './Contact.css';
-import {useRef, useState, useContext} from 'react';
+import {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
-import { ThemeContext } from '../../context';
 
 
 const Contact = () => {
     const formRef = useRef();
     const [done, setDone] = useState(false);
-    const theme = useContext(ThemeContext)
         
     const handleSubmit = (e) => {
-
-
         e.preventDefault();
         emailjs.sendForm
         (process.env.REACT_APP_SERVICE_ID, 
@@ -19,9 +15,10 @@ const Contact = () => {
         formRef.current, 
         process.env.REACT_APP_USER_ID)
         .then((result) => {
+            console.log(formRef.current)
             setDone(true)
         }, (error) => {
-            alert(error.text);            
+            console.log(error.text);            
         });
 
 
@@ -38,14 +35,15 @@ const Contact = () => {
                 <p className="contact-text">Gracias por su interés.</p>
             </div>
             <div className="contact-right">
-                <b className='contact-form-title'>Formulario de Contacto</b>
+                <b>Formulario de Contacto</b>
                 <form ref={formRef} onSubmit={handleSubmit}> 
-                    <input type="text" style={{color: theme.state.darkMode ? "white" : "black"}} placeholder='Escriba su nombre' name='from_name'/>
-                    <input type="email" style={{color: theme.state.darkMode ? "white" : "black"}} placeholder='Email'  name='email'/>
-                    <textarea rows="5" style={{color: theme.state.darkMode ? "white" : "black"}}  placeholder='Describa el motivo de su consulta, por favor.' name='message'/>
-                    <button className='button' style={{backgroundColor: theme.state.darkMode ? "gray" : "teal"}} >Enviar</button>
+                    <input type="text" placeholder='Escriba su nombre' name='from_name'/>
+                    <input type="email" placeholder='Email'  name='email'/>
+                    <textarea rows="5" placeholder='Describa el motivo de su consulta, por favor.' name='message'/>
+                    <button className='button'>Enviar</button>
                     {done && <p>Gracias por su solicitud. Será respondida en breve.</p>}
                 </form>
+
                 </div>
             </div>
     </div>

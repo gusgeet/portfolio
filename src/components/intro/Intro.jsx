@@ -1,5 +1,8 @@
 import './Intro.css';
-import img from  '../../img/image.png';
+import img from  '../../img/fondo.png';
+import About from '../about/About';
+import Techs from '../techs/Techs';
+import Contact from '../contact/Contact';
 
 const Intro = () => {
   return (
@@ -7,7 +10,7 @@ const Intro = () => {
         <div className="i-left">
             <div className="i-left-wrapper">
                 <h2 className='i-intro'>Bienvenido, mi nombre es</h2>
-                <h1 className='i-name'>Gustavo</h1>
+                <h1 className='i-name'>Gustavo Gonzalez</h1>
                 <div className="i-title">
                 <div className="i-title-wrapper">
                     <div className="i-title-item">C# developer</div>
@@ -15,7 +18,6 @@ const Intro = () => {
                     <div className="i-title-item">Back end</div>
                     <div className="i-title-item">SQL mantainer</div>
                     <div className="i-title-item">Social media manager</div>
-                    <div className="i-title-item">C# developer</div>
                         </div>
                     </div>
                     <p className="i-description">
@@ -28,9 +30,8 @@ const Intro = () => {
             </div>
         <div className="i-right">
             <div className="i-bg">
-            <img src={img} alt="" className="i-image" />
+                <img src={img} alt="" className="i-image" />
                 </div>
-                
             </div>
     </div>
   )
