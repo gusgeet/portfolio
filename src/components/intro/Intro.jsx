@@ -1,8 +1,5 @@
 import './Intro.css';
 import img from  '../../img/fondo.png';
-import About from '../about/About';
-import Techs from '../techs/Techs';
-import Contact from '../contact/Contact';
 
 const Intro = () => {
   return (

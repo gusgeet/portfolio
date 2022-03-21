@@ -20,9 +20,6 @@ const Contact = () => {
         }, (error) => {
             console.log(error.text);            
         });
-
-
-
     }
 
   return (
@@ -36,14 +33,13 @@ const Contact = () => {
             </div>
             <div className="contact-right">
                 <b>Formulario de Contacto</b>
-                <form ref={formRef} onSubmit={handleSubmit}> 
-                    <input type="text" placeholder='Escriba su nombre' name='from_name'/>
-                    <input type="email" placeholder='Email'  name='email'/>
-                    <textarea rows="5" placeholder='Describa el motivo de su consulta, por favor.' name='message'/>
+                <form className='contact-form' ref={formRef} onSubmit={handleSubmit}> 
+                    <input type="text" placeholder='Su nombre' name='from_name'/>
+                    <input type="email" placeholder='Su email'  name='email'/>
+                    <textarea rows="5" placeholder='El motivo de su consulta o interés' name='message'/>
                     <button className='button'>Enviar</button>
                     {done && <p>Gracias por su solicitud. Será respondida en breve.</p>}
                 </form>
-
                 </div>
             </div>
     </div>

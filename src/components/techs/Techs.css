@@ -5,6 +5,7 @@
     justify-content: center;
     overflow: hidden;
     margin-bottom: 150px;
+    font-size: 20px;
 }
 
 .techs {
@@ -34,12 +35,12 @@
         align-items: center;
     }
     .techs-container{
-        height: 30vh;
+        height: 40vh;
     }
 
 }
 
-@media (max-width: 600px){
+@media (max-width: 800px){
     .techs-img{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
