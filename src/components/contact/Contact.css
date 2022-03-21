@@ -1,5 +1,5 @@
 .contact-container {
-    height: 60vh;
+    height: 80vh;
     font-size: 16px;
     width: 100%;
 }
@@ -79,14 +79,34 @@ textarea:focus{
     background-color: white;
 }
 
+
+.contact-copyright{
+    margin-top: 100px;
+    text-align: center;
+    margin-left: 25px;
+}
+
 @media screen and (max-width: 800px) {
     .contact-container{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        height: 150vh;
     }
 
-    .contact-container{
-        height: 120vh;
-    }   
+    .contact-container-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-form{
+        width: 70%;
+    }
+
+    .contact-copyright{
+        margin-top: 200px;
+    }
+
 }

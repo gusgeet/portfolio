@@ -39,9 +39,11 @@ const Contact = () => {
                     <textarea rows="5" placeholder='El motivo de su consulta o interés' name='message'/>
                     <button className='button'>Enviar</button>
                     {done && <p>Gracias por su solicitud. Será respondida en breve.</p>}
+                    
                 </form>
                 </div>
             </div>
+        <p className='contact-copyright'>©Todos los derechos reservados</p>
     </div>
   )
 }

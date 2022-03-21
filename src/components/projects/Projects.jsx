@@ -43,26 +43,20 @@ export default class CustomArrows extends React.Component {
         <Slider {...settings} className='slick-slider' >
           <div className='slick-slide'>
             <img className='carousel-img' src={VetLite} alt="" />
-            <button className='carousel-button'>
                 <p className='legend'>VetLite posee una interfaz sencilla e intuitiva, que permite reconocer cada elemento del programa sin mayores introducciones o tutoriales</p>
                 <p className='legend'>Escuchando las necesidades de cada médico veterinario, se logró una herramienta accesible y de muy fácil uso.</p>
-            </button>
           </div>
           <div className='slick-slide'>
             <img className='carousel-img' src={VetLite1} alt=""/>
-            <button className='carousel-button'>
                 <p className='legend'>Permite un control de los clientes, con sus datos y cada uno de los pacientes asociados a él.</p>
                 <p className='legend'>A su vez, cada historia clínica puede tener ingresos individuales, con cargas de hasta 5 archivos de estudios clínicos.</p>
-            </button>
             
           </div>
           <div className='slick-slide'>
             <img className='carousel-img' src={VetLite2} alt=""/>
-            <button className='carousel-button'>
                 <p className='legend'>Con funciones agregadas a través de actualizaciones, incluye funciones que permiten ahorrar tiempo invaluable para el profesional veterinario.</p>
                 <p className='legend'>La agenda permite una integración con la aplicación de Whatsapp para Windows 10.</p>
                 <p className='legend'>Con un click se puede enviar un aviso sobre tratamientos o vacunas y su estado</p>
-            </button>
           </div>
         </Slider>
     </div>
