@@ -2,6 +2,8 @@
     justify-content: center;
     text-align: center;
     margin: 0 10px 150px 10px;
+    height: 45vw;
+    overflow: hidden;
 }
 
 .projects-container{
@@ -67,5 +69,11 @@
 
     .carousel-button{
         height: 120px;
+    }
+}
+
+@media screen and (max-width: 1025px){
+    .slider-container{
+        height: 90vw;
     }
 }

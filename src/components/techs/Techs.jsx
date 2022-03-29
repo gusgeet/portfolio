@@ -13,7 +13,7 @@ const Techs = () => {
   }, []);
 
   return (
-    <div className="techs-container" data-aos="fade-up">
+    <div className="techs-container" data-aos="fade-down">
         <div className="tech-holder">
             <div className="techs">
                 <h1 className="techs-text">Skills</h1>

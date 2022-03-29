@@ -11,7 +11,7 @@ const About = () => {
   
 
   return (
-    <div className='a-about-container' data-aos="fade-right" >
+    <div className='a-about-container' data-aos="fade-down" >
     <h1 className="a-title" data-aos="zoom-in-down">Sobre mí</h1>
       <div className="about">
             <div className="a-left">

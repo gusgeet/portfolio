@@ -27,16 +27,17 @@ const Contact = () => {
     }, []);
 
   return (
-    <div className='contact-container' data-aos="fade-left">
+    <div className='contact-container' data-aos="fade-down">
         <h1 className="contact-title">Contacto</h1>
         <div className="contact-container-info">
             <div className="contact-left">
                 <p className="contact-text">En caso de querer solicitar mis servicios, puede hacerlo a través del siguiente formulario.</p>
-                <p className="contact-text">Estoy abierto a cualquier clase de proyectos, no sólo de soluciones para Windows, sino también de desarrollo web.</p>
+                <p className="contact-text">Estoy abierto a cualquier clase de proyectos, no sólo de soluciones para Windows, sino también de desarrollo web.
+                </p>
                 <p className="contact-text">Gracias por su interés.</p>
             </div>
             <div className="contact-right">
-                <b>Formulario de Contacto</b>
+                <b className="contact-form-title">Formulario de Contacto</b>
                 <form className='contact-form' ref={formRef} onSubmit={handleSubmit}> 
                     <input type="text" placeholder='Su nombre' name='from_name'/>
                     <input type="email" placeholder='Su email'  name='email'/>
@@ -47,7 +48,6 @@ const Contact = () => {
                 </form>
                 </div>
             </div>
-        <p className='contact-copyright'>©Todos los derechos reservados</p>
     </div>
   )
 }

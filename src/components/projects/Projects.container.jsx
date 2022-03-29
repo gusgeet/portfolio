@@ -9,7 +9,7 @@ const ProjectsContainer = () => {
   }, [])
 
   return (
-    <div data-aos="fade-right">
+    <div data-aos="fade-down">
         <Projects/>
     </div>
   )

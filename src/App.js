@@ -7,6 +7,7 @@ import ProjectsContainer from './components/projects/Projects.container';
 import Techs from './components/techs/Techs';
 import Toggle from './components/toggle/Toggle';
 import { ThemeContext } from './context';
+import Footer from './components/footer/Footer';
 
 function App() {
   const theme = useContext(ThemeContext)
@@ -21,6 +22,7 @@ function App() {
       <Techs/>
       <ProjectsContainer />
       <Contact />
+      <Footer />
       
     </div>
   );

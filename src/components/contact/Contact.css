@@ -1,7 +1,6 @@
 .contact-container {
-    height: 100vh;
+    height: 60vh;
     font-size: 16px;
-    width: 100%;
 }
 
 .contact-title {
@@ -15,6 +14,10 @@
     font-size: 20px;    
 }
 
+.contact-form-title{
+    font-size: 25px;
+}
+
 .contact-container-info{
     display: flex;
 }
@@ -24,9 +27,6 @@
     display: flex;
     flex-direction: column;
     margin: 0 10px 0 30px;
-    
-    
-    
 }
 
 .contact-right {
@@ -80,18 +80,12 @@ textarea:focus{
 }
 
 
-.contact-copyright{
-    margin-top: 100px;
-    text-align:center;
-    
-}
-
 @media screen and (max-width: 800px) {
     .contact-container{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 200vh;
+        height: 950px;
     }
 
     .contact-container-info{
@@ -105,8 +99,6 @@ textarea:focus{
         width: 70%;
     }
 
-    .contact-copyright{
-        margin-top: 200px;
-    }
+    
 
 }

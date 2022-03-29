@@ -11,7 +11,7 @@ const Intro = () => {
     }, [])
 
   return (
-    <div className='i' data-aos="fade-left">
+    <div className='i' data-aos="fade-down">
         <div className="i-left">
             <div className="i-left-wrapper">
                 <h2 className='i-intro'>Bienvenido, mi nombre es</h2>
