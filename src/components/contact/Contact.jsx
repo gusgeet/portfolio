@@ -1,7 +1,8 @@
 import './Contact.css';
-import {useRef, useState} from 'react';
+import {useRef, useState, useEffect} from 'react';
 import emailjs from '@emailjs/browser';
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
     const formRef = useRef();
@@ -21,9 +22,12 @@ const Contact = () => {
             console.log(error.text);            
         });
     }
+    useEffect(() => {
+        Aos.init({ duration:1500 })
+    }, []);
 
   return (
-    <div className='contact-container'>
+    <div className='contact-container' data-aos="fade-left">
         <h1 className="contact-title">Contacto</h1>
         <div className="contact-container-info">
             <div className="contact-left">

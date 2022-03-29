@@ -1,5 +1,5 @@
 .contact-container {
-    height: 80vh;
+    height: 100vh;
     font-size: 16px;
     width: 100%;
 }
@@ -82,8 +82,8 @@ textarea:focus{
 
 .contact-copyright{
     margin-top: 100px;
-    text-align: center;
-    margin-left: 25px;
+    text-align:center;
+    
 }
 
 @media screen and (max-width: 800px) {
@@ -91,7 +91,7 @@ textarea:focus{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 150vh;
+        height: 200vh;
     }
 
     .contact-container-info{

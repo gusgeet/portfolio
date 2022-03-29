@@ -1,9 +1,17 @@
+import { useEffect } from 'react';
+
 import './Intro.css';
 import img from  '../../img/fondo.png';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const Intro = () => {
+    useEffect(()=> {
+        Aos.init({ duration: 5500 })
+    }, [])
+
   return (
-    <div className='i'>
+    <div className='i' data-aos="fade-left">
         <div className="i-left">
             <div className="i-left-wrapper">
                 <h2 className='i-intro'>Bienvenido, mi nombre es</h2>

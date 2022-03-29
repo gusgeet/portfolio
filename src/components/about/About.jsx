@@ -1,9 +1,18 @@
+import { useEffect } from 'react';
+
 import './About.css';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const About = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 });
+  }, [])
+  
+
   return (
-    <div className='a-about-container'>
-    <h1 className="a-title">Sobre mí</h1>
+    <div className='a-about-container' data-aos="fade-right" >
+    <h1 className="a-title" data-aos="zoom-in-down">Sobre mí</h1>
       <div className="about">
             <div className="a-left">
                 <div className="a-card bg"></div>

@@ -3,10 +3,17 @@ import logo1 from '../../img/react.png';
 import logo2 from '../../img/trio.png';
 import logo3 from '../../img/sql.png';
 import logo4 from '../../img/csharp.png';
+import { useEffect } from "react";
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const Techs = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1500 })
+  }, []);
+
   return (
-    <div className="techs-container">
+    <div className="techs-container" data-aos="fade-up">
         <div className="tech-holder">
             <div className="techs">
                 <h1 className="techs-text">Skills</h1>
