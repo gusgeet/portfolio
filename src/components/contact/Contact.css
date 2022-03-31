@@ -75,6 +75,25 @@ button{
     color: white;
     font-weight: 500;
     cursor: pointer;
+    transition-duration: 4s;
+}
+
+button::after{
+    background: white;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 4s;
+}
+
+button.active::after{
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
 }
 
 input:focus{
@@ -85,6 +104,15 @@ textarea:focus{
     background-color: white;
 }
 
+.contact-alert{
+    text-align: center;
+    color: red;
+}
+
+.contact-thanks{
+    text-align: center;
+    color: lightseagreen;
+}
 
 @media screen and (max-width: 800px) {
     .contact-container{
@@ -105,3 +133,32 @@ textarea:focus{
         width: 100%;
     }
 }
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: flex;
+    width: 24px;
+    height: 24px;
+    /* margin: 8px; */
+    justify-items: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid black;
+    border-color: #000 transparent #000 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

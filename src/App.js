@@ -30,7 +30,7 @@ const NavbarWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f666;
+  background-color: #ffb1b1;
   
 `
 
