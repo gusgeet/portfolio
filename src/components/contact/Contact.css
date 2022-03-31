@@ -1,6 +1,6 @@
 .contact-container {
-    height: 60vh;
     font-size: 16px;
+    margin-top: 100px;    
 }
 
 .contact-title {
@@ -20,6 +20,11 @@
 
 .contact-container-info{
     display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
 }
 
 .contact-left{
@@ -27,6 +32,7 @@
     display: flex;
     flex-direction: column;
     margin: 0 10px 0 30px;
+    width: 60%;
 }
 
 .contact-right {
@@ -35,7 +41,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 60%;
     
 }
 
@@ -85,7 +91,7 @@ textarea:focus{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 950px;
+        
     }
 
     .contact-container-info{
@@ -96,9 +102,6 @@ textarea:focus{
     }
 
     .contact-form{
-        width: 70%;
+        width: 100%;
     }
-
-    
-
 }

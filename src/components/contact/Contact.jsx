@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 import Aos from "aos";
 import "aos/dist/aos.css";
 
+
 const Contact = () => {
     const formRef = useRef();
     const [done, setDone] = useState(false);
@@ -37,14 +38,12 @@ const Contact = () => {
                 <p className="contact-text">Gracias por su interés.</p>
             </div>
             <div className="contact-right">
-                <b className="contact-form-title">Formulario de Contacto</b>
                 <form className='contact-form' ref={formRef} onSubmit={handleSubmit}> 
                     <input type="text" placeholder='Su nombre' name='from_name'/>
                     <input type="email" placeholder='Su email'  name='email'/>
                     <textarea rows="5" placeholder='El motivo de su consulta o interés' name='message'/>
                     <button className='button'>Enviar</button>
                     {done && <p>Gracias por su solicitud. Será respondida en breve.</p>}
-                    
                 </form>
                 </div>
             </div>

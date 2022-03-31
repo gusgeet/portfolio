@@ -1,11 +1,9 @@
 .techs-container{
-    height: 60vh;
     display: block;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    margin-bottom: 150px;
     font-size: 20px;
+    margin-top: 100px;
 }
 
 .techs {
@@ -17,13 +15,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
+    
+}
 
+.tech-img:hover{
+    transform: scale(1.2);
 }
 
 .tech-img {
-    top: 35px;
-    width: 90%;
-    height: 90%;
+    top: 15px;
+    width: 80%;
+    height: 70%;
+    transition: all .3s ease-in-out;
     
 }
 
@@ -35,7 +39,7 @@
         align-items: center;
     }
     .techs-container{
-        height: 70vh;
+        height: 120vh;
     }
 
 }
@@ -43,20 +47,19 @@
 @media (max-width: 800px){
     .techs-img{
         display: grid;
+        place-items: center;
         grid-template-columns: repeat(2, 1fr);
-       
-        
     }
     
     .techs-container {
-        height: 125vw;
+        height: 155vw;
         justify-content: space-around;
         align-items: center;
     }
     .tech-img {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
+        width: 50%;
+        height: 100%;
+        
     }
 }
 
