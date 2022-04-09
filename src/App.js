@@ -65,7 +65,6 @@ const NavLink = styled(Link)`
 const App = () => {
   
   return (
-    
     <Router>
       <div>
           <NavbarContainer>
