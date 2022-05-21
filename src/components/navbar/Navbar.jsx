@@ -6,7 +6,7 @@ import { css } from 'styled-components';
 
 const Navbar = () => {
     const [display, setDisplay] = useState(false);
-    const [ setStatus] = useState('none')
+    const [setStatus] = useState('none')
     
     const clickHandler = () => {
         setDisplay(!display);
@@ -114,7 +114,7 @@ return (
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </NavBtn>
-                    <Nav display={display}>
+                    <Nav $display={display}>
                         <NavLink to='/' onClick={() => {setDisplay(!display)}}>Home</NavLink>
                         <NavLink to='/about' onClick={() => {setDisplay(!display)}}>Sobre mí</NavLink>
                         <NavLink to='/projects' onClick={() => {setDisplay(!display)}}>Proyectos</NavLink>
