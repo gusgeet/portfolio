@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import './Intro.css';
-import img from  '../../img/fondo.png';
+import img from  '../../assets/img/fondo.png';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 

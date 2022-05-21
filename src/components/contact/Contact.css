@@ -20,7 +20,7 @@
 
 .contact-container-info{
     display: flex;
-    width: 90%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -131,6 +131,33 @@ textarea:focus{
 
     .contact-form{
         width: 100%;
+    }
+    
+    .contact-left{
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-right{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+
+    input{
+        width: 100%;
+        padding: 0;
+    }
+
+    button{
+        margin-top: 10px ;
     }
 }
 

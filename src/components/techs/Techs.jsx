@@ -1,12 +1,12 @@
 import './Techs.css'
-import logocss from '../../img/css.png';
-import logohtml from '../../img/html.png';
-import logojs from '../../img/js.png';
-import logo1 from '../../img/react.png';
-import logo3 from '../../img/sql.png';
-import logo4 from '../../img/csharp.png';
-import logo6 from '../../img/firebase.png';
-import logo5 from '../../img/git.png';
+import logocss from '../../assets/img/css.png';
+import logohtml from '../../assets/img/html.png';
+import logojs from '../../assets/img/js.png';
+import logo1 from '../../assets/img/react.png';
+import logo3 from '../../assets/img/sql.png';
+import logo4 from '../../assets/img/csharp.png';
+import logo6 from '../../assets/img/firebase.png';
+import logo5 from '../../assets/img/git.png';
 import { useEffect } from "react";
 import Aos from 'aos';
 import "aos/dist/aos.css";

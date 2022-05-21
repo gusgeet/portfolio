@@ -1,8 +1,8 @@
 .a-about-container{
     font-size: 20px;
     margin-top: 100px;
-    
 }
+
 
 .about{
     display: grid;
@@ -78,6 +78,10 @@
 }
 
 @media screen and (max-width: 1200px){
+    .a-about-container{
+        margin-top: 120px;
+    }
+
     .a-left {
         display: none;
     }
@@ -92,6 +96,7 @@
 
     .about {
         display: flex;
+        width: 90%;
         
     }
 }

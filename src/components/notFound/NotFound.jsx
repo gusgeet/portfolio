@@ -1,5 +1,5 @@
 import React from 'react';
-import Ayno from '../../img/404.jpg';
+import Ayno from '../../assets/img/404.jpg';
 import './NotFound.css';
 
 const NotFound = () => {
