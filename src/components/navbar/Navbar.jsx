@@ -6,7 +6,7 @@ import { css } from 'styled-components';
 
 const Navbar = () => {
     const [display, setDisplay] = useState(false);
-    const [setStatus] = useState('none')
+    const [status, setStatus] = useState('none')
     
     const clickHandler = () => {
         setDisplay(!display);
@@ -45,7 +45,7 @@ const Nav = styled.nav`
     
 
     @media screen and (max-width: 750px) {
-        ${({status}) => {
+        ${({display}) => {
             return css`
             display: ${display ? 'grid' : 'none'};
             `;
