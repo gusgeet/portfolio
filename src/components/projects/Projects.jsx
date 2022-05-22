@@ -3,9 +3,9 @@ import React from 'react';
 import VetLite from '../../assets/img/vetlite/vetlite_demo.png';
 import VetLite1 from '../../assets/img/vetlite/vetlite_demo2.png';
 import VetLite2 from '../../assets/img/vetlite/vetlite_demo3.png';
-import Weather from '../../assets/img/weatherApp/weather.png';
-import Weather2 from '../../assets/img/weatherApp/weather2.png';
-import Weather3 from '../../assets/img/weatherApp/weather3.png';
+// import Weather from '../../assets/img/weatherApp/weather.png';
+// import Weather2 from '../../assets/img/weatherApp/weather2.png';
+// import Weather3 from '../../assets/img/weatherApp/weather3.png';
 import crwnImg from '../../assets/img/crwnStore/crwn_store.png';
 import crwnImg1 from '../../assets/img/crwnStore/crwn_store1.png';
 import crwnImg2 from '../../assets/img/crwnStore/crwn_store2.png';
@@ -68,7 +68,7 @@ export default class CustomArrows extends React.Component {
           </div>
         </Slider>
       </div>
-      <div className="project-container">
+      {/* <div className="project-container">
         <h2 className='projects-title'><a href="https://app-4-weather.netlify.app/" className='projects-link'>Weather App(React)</a></h2>
         <Slider {...settings} className='slick-slider' >
           <div className='slick-slide'>
@@ -84,7 +84,7 @@ export default class CustomArrows extends React.Component {
             <p className='legend'>Según el clima, se muestra una imágen dinámica correspondiente al clima mostrado.</p>
           </div>
         </Slider>
-      </div>
+      </div> */}
       <div className="project-container">
         <h2 className='projects-title' ><a href="https://crwn-store-app.netlify.app/" className='projects-link'>CRWN Clothing Store App(React)</a> </h2>
         <Slider {...settings} className='slick-slider' >
