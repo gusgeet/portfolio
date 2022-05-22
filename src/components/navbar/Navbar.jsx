@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
-import { css } from 'styled-components';
-
+import {ReactComponent as svg} from '../../assets/img/menu.svg';
 
 const Navbar = () => {
     const [display, setDisplay] = useState(false);
@@ -38,11 +37,7 @@ const Nav = styled.nav`
     
 
     @media screen and (max-width: 750px) {
-        ${({display}) => {
-            return css`
-            display: ${display ? 'grid' : 'none'};
-            `;
-        }}
+        display: ${display ? 'grid' : 'none'};
         width: 100%;
         transition: width 1s ease;
         grid-template-columns: 1fr;
@@ -89,25 +84,23 @@ const NavBtn = styled.button`
         display: block;
         position: absolute;
         left: 0;
-        
-
-        svg{
-            width: 24px;
-            height: 24px;
-            
-        }
     }
 `
+
+const SvgIcon = styled(svg)`
+    width: 24px;
+    height: 24px;
+    color: white;
+`
+
 return (
     <div>
         <NavbarContainer>
                 <NavbarWrap>
                     <NavBtn onClick={() => setDisplay(!display)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                        <SvgIcon />
                     </NavBtn>
-                    <Nav display={display}>
+                    <Nav $display={display}>
                         <NavLink to='/' onClick={() => {setDisplay(!display)}}>Home</NavLink>
                         <NavLink to='/about' onClick={() => {setDisplay(!display)}}>Sobre mí</NavLink>
                         <NavLink to='/projects' onClick={() => {setDisplay(!display)}}>Proyectos</NavLink>
