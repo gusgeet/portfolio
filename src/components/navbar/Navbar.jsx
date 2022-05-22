@@ -45,12 +45,12 @@ const Nav = styled.nav`
     
 
     @media screen and (max-width: 750px) {
-        ${({status}) => {
+        ${({display}) => {
             return css`
             display: ${display ? 'grid' : 'none'};
             `;
         }}
-        width: ${(props) => (props.display ? "100%" : "0%")}
+        width: 100%;
         transition: width 1s ease;
         grid-template-columns: 1fr;
         top: 47px;
@@ -114,7 +114,7 @@ return (
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </NavBtn>
-                    <Nav $status={display}>
+                    <Nav display={display}>
                         <NavLink to='/' onClick={() => {setDisplay(!display)}}>Home</NavLink>
                         <NavLink to='/about' onClick={() => {setDisplay(!display)}}>Sobre mí</NavLink>
                         <NavLink to='/projects' onClick={() => {setDisplay(!display)}}>Proyectos</NavLink>
