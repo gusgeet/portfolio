@@ -167,12 +167,12 @@ return (
                     <Nav $display={display}>
                         <NavLink to='/' onClick={() => {setDisplay(!display)}}>{lang[0]}</NavLink>
                         <NavLink to='/about' onClick={() => {setDisplay(!display)}}>{lang[1]}</NavLink>
-                        <NavLink to='/projects' onClick={() => {setDisplay(!display)}}>{lang[2]}</NavLink>
+                        {/* <NavLink to='/projects' onClick={() => {setDisplay(!display)}}>{lang[2]}</NavLink> */}
                         <NavLink to='/techs' onClick={() => {setDisplay(!display)}}>{lang[3]}</NavLink>
                         <NavLink to='/contact' onClick={() => {setDisplay(!display)}}>{lang[4]}</NavLink>
                     </Nav>
-                    {/* <TranslateSpan>{lang[5]}</TranslateSpan> */}
-                    {/* <WorldIcon rotate={rotate} onClick={handleClick}></WorldIcon> */}
+                    <TranslateSpan>{lang[5]}</TranslateSpan>
+                    <WorldIcon rotate={rotate} onClick={handleClick}></WorldIcon>
                 </NavbarWrap>
             </NavbarContainer>
     </div>
