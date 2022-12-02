@@ -9,7 +9,7 @@ const ProjectsContainer = () => {
     Aos.init({ duration: 1500 })
   }, [])
 
-  const [state, setState] = useContext(TranslateContext);
+  const [state] = useContext(TranslateContext);
     
   const [lang, setLang ] = useState([]);
 

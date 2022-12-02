@@ -3,7 +3,7 @@ import './App.css';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
 import Intro from './components/intro/Intro';
-import ProjectsContainer from './components/projects/Projects.container';
+//import ProjectsContainer from './components/projects/Projects.container';
 import Techs from './components/techs/Techs';
 import NotFound from './components/notFound/NotFound';
 import Translate from './context/Translate';

@@ -14,7 +14,7 @@ const Contact = () => {
     const [load, setLoad] = useState(false);
     var conteo = 0;
 
-    const [state, setState] = useContext(TranslateContext);
+    const [state] = useContext(TranslateContext);
     const [lang, setLang] = useState([]);
 
     useEffect(()=> {
