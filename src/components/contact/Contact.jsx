@@ -1,7 +1,8 @@
 import './Contact.css';
-import {useRef, useState, useEffect} from 'react';
+import {useRef, useState, useEffect, useContext} from 'react';
 import emailjs from '@emailjs/browser';
 import Aos from "aos";
+import { TranslateContext } from '../../context/Translate';
 import "aos/dist/aos.css";
 
 
@@ -12,6 +13,40 @@ const Contact = () => {
     const [done3, setDone3] = useState(false);
     const [load, setLoad] = useState(false);
     var conteo = 0;
+
+    const [state, setState] = useContext(TranslateContext);
+    const [lang, setLang] = useState([]);
+
+    useEffect(()=> {
+        const Text_Esp = [
+            'Contacto',
+            'En caso de querer solicitar mis servicios, puede hacerlo a través del siguiente formulario.',
+            'Estoy abierto a cualquier clase de proyectos, no sólo de soluciones para Windows, sino también de desarrollo web.',
+            'Gracias por su interés.',
+            'Nombre',
+            'Email',
+            'El motivo de su consulta o interés',
+            'Enviar',
+            'Gracias por su solicitud. Será respondida a la brevedad.',
+            'Debe ingresar un email válido.',
+            'Ha intentado enviar un formulario más de 5 veces. Aguarde por favor la respuesta a su solicitud'
+        ]
+        
+        const Text_Eng = [
+            'Contact',
+            'In case you want to adquire my services, you can do it through this form.',
+            'I\'m open to any kind of projects, not only of Windows based solutions, but also for web development.',
+            'Thank you for your interest.',
+            'Name',
+            'Email address',
+            'The reason of your consultation',
+            'Send',
+            'Thank you for applying. You\'ll get a response as soon as possible.',
+            'A valid email address is required.',
+            'You\'ve tried to send a form more than 5 times. Please, wait for the answer to your request.'
+        ]
+        setLang(state ? Text_Eng: Text_Esp)
+    },[state])
         
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -66,30 +101,30 @@ const Contact = () => {
 
   return (
     <div className='contact-container' data-aos="fade-down">
-        <h1 className="contact-title">Contacto</h1>
+        <h1 className="contact-title">{lang[0]}</h1>
        
         <div className="contact-container-info">
             <div className="contact-left">
-                <p className="contact-text">En caso de querer solicitar mis servicios, puede hacerlo a través del siguiente formulario.</p>
-                <p className="contact-text">Estoy abierto a cualquier clase de proyectos, no sólo de soluciones para Windows, sino también de desarrollo web.
+                <p className="contact-text">{lang[1]}</p>
+                <p className="contact-text">{lang[2]}
                 </p>
-                <p className="contact-text">Gracias por su interés.</p>
+                <p className="contact-text">{lang[3]}</p>
             </div>
             <div className="contact-right">
                 <form className='contact-form' ref={formRef} onSubmit={handleSubmit}> 
-                    <input type="text" placeholder='Su nombre' name='from_name'/>
-                    <input type="email" id='email' placeholder='Su email'  name='email'/>
-                    <textarea rows="5" placeholder='El motivo de su consulta o interés' name='message'/>
-                    <button className='button'>Enviar</button>
+                    <input type="text" placeholder={lang[4]} name='from_name'/>
+                    <input type="email" id='email' placeholder={lang[5]}  name='email'/>
+                    <textarea rows="5" placeholder={lang[6]} name='message'/>
+                    <button className='button'>{lang[7]}</button>
                     {load && <div className="lds-dual-ring"></div>}
                 </form>
               
                 </div>
                 
             </div>
-        {done && <p className='contact-thanks'>Gracias por su solicitud. Será respondida a la brevedad.</p>}
-        {done2 && <p className='contact-alert'>Debe ingresar un email válido.</p>}
-        {done3 && <p className='contact-alert'>Ha intentado enviar un formulario más de 5 veces. Aguarde por favor la respuesta a su solicitud</p>}
+        {done && <p className='contact-thanks'>{lang[8]}</p>}
+        {done2 && <p className='contact-alert'>{lang[9]}</p>}
+        {done3 && <p className='contact-alert'>{lang[10]}</p>}
         
     </div>
   )

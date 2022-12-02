@@ -6,6 +6,7 @@ import Intro from './components/intro/Intro';
 import ProjectsContainer from './components/projects/Projects.container';
 import Techs from './components/techs/Techs';
 import NotFound from './components/notFound/NotFound';
+import Translate from './context/Translate';
 import { 
   BrowserRouter as Router, 
   Switch, 
@@ -17,16 +18,18 @@ const App = () => {
   
   return (
     <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path='/' index component={Intro} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/techs' component={Techs}/>
-        <Route exact path='/projects' component={ProjectsContainer} />
-        <Route exact path='/contact' component={Contact} />
-        <Route path='*' component={NotFound} />
-        
-      </Switch>
+      <Translate>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' index component={Intro} />
+          <Route exact path='/about' component={About} />
+          <Route exact path='/techs' component={Techs}/>
+          <Route exact path='/projects' component={ProjectsContainer} />
+          <Route exact path='/contact' component={Contact} />
+          <Route path='*' component={NotFound} />
+          
+        </Switch>
+      </Translate>
     </Router>
     
   );

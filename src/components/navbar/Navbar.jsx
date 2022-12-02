@@ -1,12 +1,49 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import {ReactComponent as svg} from '../../assets/img/menu.svg';
+import {ReactComponent as World} from '../../assets/img/world.svg';
+import { TranslateContext } from '../../context/Translate';
 
 const Navbar = () => {
-    const [display, setDisplay] = useState(false);
     
+    //maneja el mobile responsiveness
+    const [display, setDisplay] = useState(false);
 
+    //comienza la traduccion
+    const [state, setState] = useContext(TranslateContext);
+    
+    const [lang, setLang ] = useState([]);
+    const [rotate, setRotate] = useState(false);
+
+    const handleClick = () => {
+        setRotate(!rotate)
+        console.log(rotate)
+        setState(!state)
+    }
+
+    useEffect(()=> {
+        const Text_Esp = [
+            'Inicio',
+            'Sobre mí',
+            'Proyectos',
+            'Habilidades',
+            'Contacto',
+            'Idioma seleccionado = Español'
+        ]
+        
+        const Text_Eng = [
+            'Home',
+            'About me',
+            'Projects',
+            'Skills',
+            'Contact',
+            'Selected language = English'
+        ]
+        setLang(state ? Text_Eng: Text_Esp)
+    },[state])
+
+    
 const NavbarContainer = styled.div`
     width: 100%;
     height: 70px;
@@ -33,9 +70,7 @@ const NavbarWrap = styled.div`
 const Nav = styled.nav`
     flex: 1;
     position: relative;
-   
-    
-
+ 
     @media screen and (max-width: 750px) {
         display: ${display ? 'grid' : 'none'};
         width: 100%;
@@ -68,8 +103,6 @@ const NavLink = styled(Link)`
         text-align: center;
         background: rgb(2,0,36);
         background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-    
-        
     }
 `
 
@@ -93,6 +126,37 @@ const SvgIcon = styled(svg)`
     color: white;
 `
 
+const TranslateSpan = styled.span`
+    position: absolute;
+    color: white;
+    right: 60px;
+    font-weight: 700;
+    
+
+    @media (max-width: 750px){
+        top: 32px;
+    }
+`
+
+const WorldIcon = styled(World)`
+    color: white;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    top: 21px;
+    cursor: pointer;
+    float: right;
+    transform: rotate(0deg);
+    overflow: hidden;
+    transition: all 0.4s ease-out;
+    transform: ${props=> (props.rotate ? `rotate(180deg)` : "")};
+
+    @media (max-width: 750px){
+        top: 27px;
+    }
+`
+
 return (
     <div>
         <NavbarContainer>
@@ -101,12 +165,14 @@ return (
                         <SvgIcon />
                     </NavBtn>
                     <Nav $display={display}>
-                        <NavLink to='/' onClick={() => {setDisplay(!display)}}>Home</NavLink>
-                        <NavLink to='/about' onClick={() => {setDisplay(!display)}}>Sobre mí</NavLink>
-                        <NavLink to='/projects' onClick={() => {setDisplay(!display)}}>Proyectos</NavLink>
-                        <NavLink to='/techs' onClick={() => {setDisplay(!display)}}>Skills</NavLink>
-                        <NavLink to='/contact' onClick={() => {setDisplay(!display)}}>Contactos</NavLink>
+                        <NavLink to='/' onClick={() => {setDisplay(!display)}}>{lang[0]}</NavLink>
+                        <NavLink to='/about' onClick={() => {setDisplay(!display)}}>{lang[1]}</NavLink>
+                        <NavLink to='/projects' onClick={() => {setDisplay(!display)}}>{lang[2]}</NavLink>
+                        <NavLink to='/techs' onClick={() => {setDisplay(!display)}}>{lang[3]}</NavLink>
+                        <NavLink to='/contact' onClick={() => {setDisplay(!display)}}>{lang[4]}</NavLink>
                     </Nav>
+                    {/* <TranslateSpan>{lang[5]}</TranslateSpan> */}
+                    {/* <WorldIcon rotate={rotate} onClick={handleClick}></WorldIcon> */}
                 </NavbarWrap>
             </NavbarContainer>
     </div>

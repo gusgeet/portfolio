@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useState,useContext } from 'react';
+import { TranslateContext } from '../../context/Translate';
 
 import './Intro.css';
 import img from  '../../assets/img/fondo.png';
@@ -6,6 +7,25 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 
 const Intro = () => {
+    //comienza la traduccion
+    const [state, setState] = useContext(TranslateContext);
+    
+    const [lang, setLang ] = useState([]);
+
+    useEffect(()=> {
+        const Text_Esp = [
+            'Bienvenido, mi nombre es',
+            'Desarrollador de soluciones para Windows basadas en C# y SQL, desarrollador de páginas web a través de React, apasionado por los avances y crecimientos de las nuevas tecnologías.',
+        ]
+        
+        const Text_Eng = [
+            'Welcome, my name is',
+            'Windows-based solutions maker through C# and SQL, React developer, and a passionate person for the growth and advances of the new techs.',
+        ]
+        setLang(state ? Text_Eng : Text_Esp)
+    },[state])
+
+
     useEffect(()=> {
         Aos.init({ duration: 1500 })
     }, [])
@@ -14,7 +34,7 @@ const Intro = () => {
     <div className='i' data-aos="fade-down">
         <div className="i-left">
             <div className="i-left-wrapper">
-                <h2 className='i-intro'>Bienvenido, mi nombre es</h2>
+                <h2 className='i-intro'>{lang[0]}</h2>
                 <h1 className='i-name'>Gustavo Gonzalez</h1>
                 <div className="i-title">
                 <div className="i-title-wrapper">
@@ -26,9 +46,7 @@ const Intro = () => {
                         </div>
                     </div>
                     <p className="i-description">
-                        Desarrollador de soluciones para Windows basadas en C# y SQL, desarrollador 
-                        de páginas web a través de React, apasionado por los avances y 
-                        crecimientos de las nuevas tecnologías.
+                        {lang[1]}
                         </p>
                 </div>
                
