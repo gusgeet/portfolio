@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 const Intro = () => {
     //comienza la traduccion
-    const [state, setState] = useContext(TranslateContext);
+    const [state] = useContext(TranslateContext);
     
     const [lang, setLang ] = useState([]);
 
