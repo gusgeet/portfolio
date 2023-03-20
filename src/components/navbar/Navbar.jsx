@@ -18,7 +18,6 @@ const Navbar = () => {
 
     const handleClick = () => {
         setRotate(!rotate)
-        console.log(rotate)
         setState(!state)
     }
 
@@ -29,7 +28,7 @@ const Navbar = () => {
             'Proyectos',
             'Habilidades',
             'Contacto',
-            'Idioma seleccionado = Español'
+            'ESP'
         ]
         
         const Text_Eng = [
@@ -38,7 +37,7 @@ const Navbar = () => {
             'Projects',
             'Skills',
             'Contact',
-            'Selected language = English'
+            'ENG'
         ]
         setLang(state ? Text_Eng: Text_Esp)
     },[state])
@@ -46,10 +45,10 @@ const Navbar = () => {
     
 const NavbarContainer = styled.div`
     width: 100%;
-    height: 70px;
+    height: 60px;
     z-index: 20;
     
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 950px) {
         position: fixed;
         top: 0;
     }
@@ -64,19 +63,18 @@ const NavbarWrap = styled.div`
     justify-content: center;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
-
 `
 
 const Nav = styled.nav`
     flex: 1;
     position: relative;
- 
-    @media screen and (max-width: 750px) {
+    
+    @media screen and (max-width: 950px) {
         display: ${display ? 'grid' : 'none'};
         width: 100%;
         transition: width 1s ease;
         grid-template-columns: 1fr;
-        top: 47px;
+        top: 27px;
         height: 25px;
                  
     }
@@ -96,7 +94,7 @@ const NavLink = styled(Link)`
         transition: 0.9s all;
     }
 
-    @media (max-width: 750px){
+    @media (max-width: 950px){
         height: 0.1em;
         width: 100%;
         padding: 40px 0rem;
@@ -113,9 +111,10 @@ const NavBtn = styled.button`
     background-color: transparent;
     
 
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 950px) {
         display: block;
         position: absolute;
+        top: -5px;
         left: 0;
     }
 `
@@ -124,6 +123,10 @@ const SvgIcon = styled(svg)`
     width: 24px;
     height: 24px;
     color: white;
+
+    @media (max-width: 950px){
+        top: 25px;
+    }
 `
 
 const TranslateSpan = styled.span`
@@ -131,10 +134,10 @@ const TranslateSpan = styled.span`
     color: white;
     right: 60px;
     font-weight: 700;
-    
+    top: 20px;
 
-    @media (max-width: 750px){
-        top: 32px;
+    @media (max-width: 950px){
+        top: 20px;
     }
 `
 
@@ -144,7 +147,7 @@ const WorldIcon = styled(World)`
     height: 30px;
     position: absolute;
     right: 15px;
-    top: 21px;
+    top: 18px;
     cursor: pointer;
     float: right;
     transform: rotate(0deg);
@@ -152,8 +155,8 @@ const WorldIcon = styled(World)`
     transition: all 0.4s ease-out;
     transform: ${props=> (props.rotate ? `rotate(180deg)` : "")};
 
-    @media (max-width: 750px){
-        top: 27px;
+    @media (max-width: 950px){
+        top: 16px; 
     }
 `
 
