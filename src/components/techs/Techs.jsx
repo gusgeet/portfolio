@@ -8,9 +8,8 @@ import logo4 from '../../assets/img/csharp.png';
 import logo6 from '../../assets/img/firebase.png';
 import logo7 from '../../assets/img/github.png';
 import logo8 from '../../assets/img/vue.png';
-import logo9 from '../../assets/img/redux.png';
 import logo10 from '../../assets/img/vm.png';
-import logo12 from '../../assets/img/netMVC.png';
+import logo12 from '../../assets/img/net-core.png';
 
 import { useEffect, useContext, useState } from "react";
 import {TranslateContext} from '../../context/Translate';
@@ -38,24 +37,40 @@ const Techs = () => {
   },[state])
 
   return (
-    <div className="techs-container" data-aos="fade-down">
+    <div className="techs-container" data-aos="fade-down" id="techs">
         <div className="tech-holder">
             <div className="techs">
                 <h1 className="techs-text">{lang[0]}</h1>
             </div>
             <div className="techs-img">
-                <img src={logohtml} alt="logo html" className="tech-img" />
-                <img src={logocss} alt="logo css" className="tech-img" />
-                <img src={logojs} alt="logo javascript" className="tech-img" />
-                <img src={logo1} alt="logo react" className="tech-img" />
-                <img src={logo3} alt="logo sql" className="tech-img" />
-                <img src={logo4} alt="logo c#" className="tech-img" />
-                <img src={logo6} alt="logo firebase" className="tech-img" />
-                <img src={logo7} alt="logo github" className="tech-img" />
-                <img src={logo8} alt="logo vue" className="tech-img" />
-                <img src={logo9} alt="logo redux" className="tech-img" />
-                <img src={logo10} alt="logo vm" className="tech-img" />
-                <img src={logo12} alt="logo git" className="tech-img" />
+                <div className="tech-divs">
+                    <h6>Front End</h6>
+                    <section className="card-tech">
+                        <img src={logohtml} alt="logo html" className="tech-img" />
+                        <img src={logocss} alt="logo css" className="tech-img" />
+                        <img src={logojs} alt="logo javascript" className="tech-img" />
+                        <img src={logo1} alt="logo react" className="tech-img" />
+                        <img src={logo8} alt="logo vue" className="tech-img" />
+                    </section>
+                </div>
+                <div className="tech-divs">
+                    <h6>Backend</h6>
+                    <section className="card-tech">
+                        <img src={logo3} alt="logo sql" className="tech-img" />
+                        <img src={logo4} alt="logo c#" className="tech-img" />
+                        <img src={logo6} alt="logo firebase" className="tech-img" />
+                        <img src={logo12} alt="logo git" className="tech-img" />
+                    </section>
+                </div>
+                <div className="tech-divs">
+                    <h6>Herramientas</h6>
+                    <section className="card-tech">
+                        <img src={logo7} alt="logo github" className="tech-img" />
+                        <img src={logo10} alt="logo vm" className="tech-img" />
+                    </section>
+                </div>
+                
+                
             </div>
         </div>
     </div>

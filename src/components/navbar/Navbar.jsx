@@ -55,7 +55,8 @@ const NavbarContainer = styled.div`
 `
 const NavbarWrap = styled.div`
     width: 100%;
-    height: 100%;
+    height: 60px;
+    position:sticky;
     margin: 0 auto;
     z-index: 20;
     display: flex;
@@ -65,7 +66,7 @@ const NavbarWrap = styled.div`
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
 `
 
-const Nav = styled.nav`
+const Nav = styled.div`
     flex: 1;
     position: relative;
     
@@ -80,7 +81,7 @@ const Nav = styled.nav`
     }
 `
 
-const NavLink = styled(Link)`
+const NavLink = styled.a`
     color: #000;
     font-size: 16px;
     font-weight: 700;
@@ -168,11 +169,11 @@ return (
                         <SvgIcon />
                     </NavBtn>
                     <Nav $display={display}>
-                        <NavLink to='/' onClick={() => {setDisplay(!display)}}>{lang[0]}</NavLink>
-                        <NavLink to='/about' onClick={() => {setDisplay(!display)}}>{lang[1]}</NavLink>
+                        <NavLink href='#wrapper' onClick={() => {setDisplay(!display)}}>{lang[0]}</NavLink>
+                        <NavLink href='#about' onClick={() => {setDisplay(!display)}}>{lang[1]}</NavLink>
                         {/* <NavLink to='/projects' onClick={() => {setDisplay(!display)}}>{lang[2]}</NavLink> */}
-                        <NavLink to='/techs' onClick={() => {setDisplay(!display)}}>{lang[3]}</NavLink>
-                        <NavLink to='/contact' onClick={() => {setDisplay(!display)}}>{lang[4]}</NavLink>
+                        <NavLink href='#techs' onClick={() => {setDisplay(!display)}}>{lang[3]}</NavLink>
+                        <NavLink href='#contact' onClick={() => {setDisplay(!display)}}>{lang[4]}</NavLink>
                     </Nav>
                     <TranslateSpan>{lang[5]}</TranslateSpan>
                     <WorldIcon rotate={rotate} onClick={handleClick}></WorldIcon>

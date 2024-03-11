@@ -4,6 +4,9 @@ import { TranslateContext } from '../../context/Translate';
 import './Intro.css';
 import img from  '../../assets/img/fondo.png';
 import Aos from 'aos';
+import About from '../about/About';
+import Techs from '../techs/Techs';
+import Contact from '../contact/Contact.jsx';
 import "aos/dist/aos.css";
 
 const Intro = () => {
@@ -31,31 +34,36 @@ const Intro = () => {
     }, [])
 
   return (
-    <div className='i' data-aos="fade-down">
-        <div className="i-left">
-            <div className="i-left-wrapper">
-                <h2 className='i-intro'>{lang[0]}</h2>
-                <h1 className='i-name'>Gustavo Gonzalez</h1>
-                <div className="i-title">
-                <div className="i-title-wrapper">
-                    <div className="i-title-item">C# developer</div>
-                    <div className="i-title-item">Front end</div>
-                    <div className="i-title-item">Back end</div>
-                    <div className="i-title-item">SQL mantainer</div>
-                    <div className="i-title-item">Social media manager</div>
+    <div className='i' data-aos="fade-down" id='wrapper'>
+        <section id="wrapper-section">
+            <div className="i-left">
+                <div className="i-left-wrapper">
+                    <h2 className='i-intro'>{lang[0]}</h2>
+                    <h1 className='i-name'>Gustavo Gonzalez</h1>
+                    <div className="i-title">
+                    <div className="i-title-wrapper">
+                        <div className="i-title-item">C# developer</div>
+                        <div className="i-title-item">Front end</div>
+                        <div className="i-title-item">Back end</div>
+                        <div className="i-title-item">SQL mantainer</div>
+                        <div className="i-title-item">Social media manager</div>
+                            </div>
                         </div>
+                        <p className="i-description">
+                            {lang[1]}
+                            </p>
                     </div>
-                    <p className="i-description">
-                        {lang[1]}
-                        </p>
                 </div>
-               
-            </div>
-        <div className="i-right">
-            <div className="i-bg">
-                <img src={img} alt="" className="i-image" />
+            <div className="i-right">
+                <div className="i-bg">
+                    <img src={img} alt="" className="i-image" />
                 </div>
             </div>
+        </section>
+
+        <About />
+        <Techs />
+        <Contact />
     </div>
   )
 }

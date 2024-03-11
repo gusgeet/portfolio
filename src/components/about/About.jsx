@@ -41,7 +41,7 @@ const About = () => {
   
 
   return (
-    <div className='a-about-container' data-aos="fade-down" >
+    <div className='a-about-container' data-aos="fade-down" id="about">
       <h1 className="a-title" data-aos="zoom-in-down">{lang[6]}</h1>
         <div className="about">
               <div className="a-left">

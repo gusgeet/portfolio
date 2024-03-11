@@ -100,7 +100,7 @@ const Contact = () => {
     }, []);
 
   return (
-    <div className='contact-container' data-aos="fade-down">
+    <div className='contact-container' data-aos="fade-down" id="contact">
         <h1 className="contact-title">{lang[0]}</h1>
        
         <div className="contact-container-info">
