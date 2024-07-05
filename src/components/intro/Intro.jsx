@@ -1,8 +1,18 @@
 import './Intro.css';
 import img from  '../../img/image.png';
-import mouse from '../../img/mouse.svg';
 
 const Intro = () => {
+    const techs = [
+        'C#',
+        'Typescript / Javascript',
+        'SQL / MongoDB / Firebird / Firebase',
+        'ASP Net Core / ASP Net MVC',
+        '.Net Framework',
+        'React / Vue',
+        'Git / Github',
+        'Jira',
+    ]
+
   return (
     <div className='i'>
         <div className="i-left">
@@ -11,11 +21,11 @@ const Intro = () => {
                 <h1 className='i-name'>Gustavo</h1>
                 <div className="i-title">
                 <div className="i-title-wrapper">
-                    <div className="i-title-item">C# developer</div>
-                    <div className="i-title-item">Front end</div>
-                    <div className="i-title-item">Back end</div>
-                    <div className="i-title-item">SQL mantainer</div>
-                    <div className="i-title-item">Social media manager</div>
+                    { techs.map(t => {
+                        return (
+                            <div className="i-title-item">{t}</div>
+                            ) 
+                        }) }
                         </div>
                     </div>
                     <p className="i-description">

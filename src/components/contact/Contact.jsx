@@ -1,7 +1,7 @@
 import './Contact.css';
-import react, {useRef, useState} from 'react';
+import {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
-import { DotenvConfigOptions } from 'dotenv';
+
 
 const Contact = () => {
     const formRef = useRef();
