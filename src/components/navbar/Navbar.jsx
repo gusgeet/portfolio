@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { useState, useContext, useEffect } from 'react';
 import {ReactComponent as svg} from '../../assets/img/menu.svg';
 import {ReactComponent as World} from '../../assets/img/world.svg';
@@ -55,6 +54,7 @@ const NavbarContainer = styled.div`
 `
 const NavbarWrap = styled.div`
     width: 100%;
+    position: fixed !important;
     height: 60px;
     position:sticky;
     margin: 0 auto;

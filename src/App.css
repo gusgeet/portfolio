@@ -2,3 +2,7 @@
   font-family: 'Fredoka', sans-serif;
   
 }
+
+html {
+  scroll-behavior: smooth;
+}

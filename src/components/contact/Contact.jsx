@@ -83,16 +83,16 @@ const Contact = () => {
         setLoad(true)
         emailjs.sendForm
         
-        (process.env.REACT_APP_SERVICE_ID, 
-        process.env.REACT_APP_TEMPLATE_ID, 
-        formRef.current, 
-        process.env.REACT_APP_USER_ID)
-        .then((result) => {
-            conteo += 1;
-            setDone(true)
-            setLoad(false)
-        }, (error) => {
-            
+        (
+            process.env.REACT_APP_SERVICE_ID, 
+            process.env.REACT_APP_TEMPLATE_ID, 
+            formRef.current, 
+            process.env.REACT_APP_USER_ID)
+            .then((result) => {
+                conteo += 1;
+                setDone(true)
+                setLoad(false)
+            }, (error) => {
         });
     }
     useEffect(() => {

@@ -1,7 +1,14 @@
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+}
+
 #wrapper-section {
     display: flex;
     flex-direction: row;
     padding: 25px;
+    margin: 50px 50px 0;
 }
 
 .i-left-wrapper {
