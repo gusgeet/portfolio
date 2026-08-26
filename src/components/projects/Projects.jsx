@@ -27,6 +27,16 @@ const Projects = ({ content, media }) => {
               </span>
             ))}
           </div>
+          {content.featured.liveUrl && (
+            <a
+              href={content.featured.liveUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="button-link button-link-inline"
+            >
+              {content.featured.liveLabel}
+            </a>
+          )}
         </div>
 
         <div className="project-media-grid" aria-label={content.featured.title}>

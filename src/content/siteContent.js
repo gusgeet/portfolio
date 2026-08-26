@@ -145,6 +145,8 @@ const siteContentEs = {
       description:
         'VetLite concentra la parte más fuerte de mi experiencia: software de escritorio, lógica de negocio, persistencia y funcionalidades diseñadas alrededor del uso real del profesional veterinario.',
       tags: ['C#', 'MS SQL', 'Windows', 'WhatsApp Desktop'],
+      liveUrl: 'https://vetlite.com.ar',
+      liveLabel: 'Ver landing',
       bullets: [
         'Gestión de clientes, pacientes e historial clínico.',
         'Carga de estudios clínicos y seguimiento por visitas.',
@@ -179,7 +181,7 @@ const siteContentEs = {
     id: 'stack',
     title: 'Stack y herramientas',
     intro:
-      'En lugar de una pared de logos, el stack se organiza por áreas de trabajo para que el perfil se lea más rápido.',
+      'Trabajo principalmente con tecnologías orientadas a producto, sistemas de negocio y plataformas web, combinando backend, frontend y datos según el contexto del proyecto.',
     groups: [
       {
         title: 'Frontend',
@@ -352,6 +354,8 @@ const siteContentEn = {
       description:
         'VetLite represents the strongest part of my experience: desktop software, business logic, persistence and features shaped around real veterinary workflows.',
       tags: ['C#', 'MS SQL', 'Windows', 'WhatsApp Desktop'],
+      liveUrl: 'https://vetlite.com.ar',
+      liveLabel: 'Open landing',
       bullets: [
         'Client, patient and clinical history management.',
         'Clinical study attachments and visit tracking.',
@@ -386,7 +390,7 @@ const siteContentEn = {
     id: 'stack',
     title: 'Stack and tools',
     intro:
-      'Instead of a wall of logos, the stack is grouped by work area so the profile reads faster.',
+      'I mainly work with technologies oriented to product development, business systems and web platforms, combining backend, frontend and data depending on the project context.',
     groups: [
       {
         title: 'Frontend',

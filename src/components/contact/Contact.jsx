@@ -65,7 +65,6 @@ const Contact = ({ content, socialLinks }) => {
                     </a>
                 </div>
 
-                <p className="contact-note">{content.note}</p>
             </aside>
 
             <div className="contact-form-card">
