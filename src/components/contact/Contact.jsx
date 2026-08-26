@@ -1,52 +1,92 @@
 import './Contact.css';
-import {useRef, useState} from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-
-const Contact = () => {
+const Contact = ({ content, socialLinks }) => {
     const formRef = useRef();
-    const [done, setDone] = useState(false);
+    const [status, setStatus] = useState('idle');
+
+    const emailConfig = {
+        serviceId: import.meta.env.VITE_SERVICE_ID,
+        templateId: import.meta.env.VITE_TEMPLATE_ID,
+        userId: import.meta.env.VITE_USER_ID,
+    };
+
+    const isEmailConfigured = Object.values(emailConfig).every(Boolean);
         
     const handleSubmit = (e) => {
         e.preventDefault();
+        setStatus('idle');
+
+        if (!isEmailConfigured) {
+            setStatus('missing-config');
+            return;
+        }
+
         emailjs.sendForm
-        (process.env.REACT_APP_SERVICE_ID, 
-        process.env.REACT_APP_TEMPLATE_ID, 
+        (emailConfig.serviceId, 
+        emailConfig.templateId, 
         formRef.current, 
-        process.env.REACT_APP_USER_ID)
+        emailConfig.userId)
         .then((result) => {
             console.log(formRef.current)
-            setDone(true)
+            setStatus('success')
         }, (error) => {
-            console.log(error.text);            
+            console.log(error.text);
+            setStatus('error');            
         });
-
-
-
     }
 
   return (
-    <div className='contact-container'>
-        <h1 className="contact-title">Contacto</h1>
-        <div className="contact-container-info">
-            <div className="contact-left">
-                <p className="contact-text">En caso de querer solicitar mis servicios, puede hacerlo a través del siguiente formulario.</p>
-                <p className="contact-text">Estoy abierto a cualquier clase de proyectos, no sólo de soluciones para Windows, sino también de desarrollo web.</p>
-                <p className="contact-text">Gracias por su interés.</p>
-            </div>
-            <div className="contact-right">
-                <b>Formulario de Contacto</b>
-                <form ref={formRef} onSubmit={handleSubmit}> 
-                    <input type="text" placeholder='Escriba su nombre' name='from_name'/>
-                    <input type="email" placeholder='Email'  name='email'/>
-                    <textarea rows="5" placeholder='Describa el motivo de su consulta, por favor.' name='message'/>
-                    <button className='button'>Enviar</button>
-                    {done && <p>Gracias por su solicitud. Será respondida en breve.</p>}
-                </form>
+    <section className="section-shell contact-section" id={content.id}>
+        <div className="section-header">
+            <p className="section-kicker">Contact</p>
+            <h2 className="section-title">{content.title}</h2>
+            <p className="section-intro">{content.intro}</p>
+        </div>
 
+        <div className="contact-layout">
+            <aside className="contact-panel">
+                <ul className="contact-bullets">
+                    {content.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                    ))}
+                </ul>
+
+                <div className="contact-links">
+                    <a href={socialLinks.github} target="_blank" rel="noreferrer noopener" className="button-secondary">
+                        {content.quickLinks[0].label}
+                    </a>
+                    <a href={socialLinks.linkedin} target="_blank" rel="noreferrer noopener" className="button-secondary">
+                        {content.quickLinks[1].label}
+                    </a>
+                    <a href={content.quickLinks[2].href} className="button-primary">
+                        {content.quickLinks[2].label}
+                    </a>
                 </div>
+
+                <p className="contact-note">{content.note}</p>
+            </aside>
+
+            <div className="contact-form-card">
+                <h3 className="contact-form-title">{content.formTitle}</h3>
+                <form ref={formRef} onSubmit={handleSubmit} id="contact-form" className="contact-form"> 
+                    <label className="contact-label" htmlFor="contact-name">{content.nameLabel}</label>
+                    <input id="contact-name" type="text" placeholder={content.namePlaceholder} name='from_name' required />
+                    <label className="contact-label" htmlFor="contact-email">{content.emailLabel}</label>
+                    <input id="contact-email" type="email" placeholder={content.emailPlaceholder}  name='email' required />
+                    <label className="contact-label" htmlFor="contact-message">{content.messageLabel}</label>
+                    <textarea id="contact-message" rows="6" placeholder={content.messagePlaceholder} name='message' required />
+                    <button className='contact-submit' type="submit">{content.submit}</button>
+                    <p className="contact-feedback" aria-live="polite">
+                        {status === 'success' ? content.success : ''}
+                        {status === 'error' ? content.error : ''}
+                        {status === 'missing-config' ? content.missingConfig : ''}
+                    </p>
+                </form>
             </div>
-    </div>
+        </div>
+    </section>
   )
 }
 

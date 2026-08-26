@@ -1,0 +1,121 @@
+.projects-section {
+  display: grid;
+  gap: 32px;
+}
+
+.project-featured-card,
+.project-secondary-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 32px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 32px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(238, 245, 255, 0.94));
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08);
+}
+
+.project-copy,
+.project-secondary-copy {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+.project-status,
+.project-secondary-eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(14, 165, 233, 0.14);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-title,
+.project-secondary-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1.02;
+}
+
+.project-subtitle,
+.project-description,
+.project-points {
+  margin: 0;
+}
+
+.project-description {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.project-points {
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-media-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 14px;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #d9e1ec;
+}
+
+.project-image-large {
+  grid-row: span 2;
+  min-height: 420px;
+}
+
+.project-secondary-grid {
+  display: grid;
+}
+
+.project-secondary-media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.button-link-inline {
+  width: fit-content;
+}
+
+@media (max-width: 980px) {
+  .project-featured-card,
+  .project-secondary-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media-grid,
+  .project-secondary-media {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image-large {
+    grid-row: auto;
+    min-height: 280px;
+  }
+}

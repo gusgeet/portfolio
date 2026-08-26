@@ -1,27 +1,28 @@
 import './Techs.css'
-import logo1 from '../../img/react.png';
-import logo2 from '../../img/trio.png';
-import logo3 from '../../img/csharp.png';
-import logo4 from '../../img/sql.png';
-
-
-
-const Techs = () => {
+const Techs = ({ content }) => {
   return (
-    <div className="techs-container">
-        <div className="tech-holder">
-            <div className="techs">
-                <h1 className="techs-text">Skills</h1>
-            </div>
-            <div className="techs-img">
-                <img src={logo1} alt="" className="tech-img" />
-                <img src={logo2} alt="" className="tech-img" />
-                <img src={logo3} alt="" className="tech-img" />
-                <img src={logo4} alt="" className="tech-img" />
-            </div>
+    <section className="section-shell stack-section" id={content.id}>
+        <div className="section-header">
+            <p className="section-kicker">Stack</p>
+            <h2 className="section-title">{content.title}</h2>
+            <p className="section-intro">{content.intro}</p>
         </div>
-    </div>
-    
+
+        <div className="stack-grid">
+            {content.groups.map((group) => (
+                <article key={group.title} className="stack-card">
+                    <h3 className="stack-card-title">{group.title}</h3>
+                    <div className="stack-chip-list">
+                        {group.items.map((item) => (
+                            <span key={item} className="tag">
+                                {item}
+                            </span>
+                        ))}
+                    </div>
+                </article>
+            ))}
+        </div>
+    </section>
   )
 }
 
